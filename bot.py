@@ -30,14 +30,16 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, 
 
 pr0fess0r_99=Client(
     "Auto Approved Bot",
-    bot_token = environ["BOT_TOKEN"],
-    api_id = int(environ["API_ID"]),
-    api_hash = environ["API_HASH"]
+    bot_token = environ["5630873709:AAHtEhH9rsZslFQw3dHngt37jjwkNdK16qc"],
+    api_id = int(environ["22359038"]),
+    api_hash = environ["b3901895dc193c30c808ba4f1b550ed0"]
 )
 
 CHAT_ID = [int(pr0fess0r_99) for pr0fess0r_99 in environ.get("CHAT_ID", None).split()]
 TEXT = environ.get("APPROVED_WELCOME_TEXT", "Hello {mention}\nWelcome To {title}\n\nYour Auto Approved")
 APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
+MONGO_URI = getenv("MONGO_URI", "mongodb+srv://Adish4:Adish4@cluster0.dyhrj0e.mongodb.net/?retryWrites=true&w=majority")
+SUDO = list(map(int, getenv("SUDO").split(5531461861)))
 
 @pr0fess0r_99.on_message(filters.private & filters.command(["start"]))
 async def start(client: pr0fess0r_99, message: Message):
